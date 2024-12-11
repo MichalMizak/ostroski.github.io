@@ -30,6 +30,7 @@ header p {
 }
 
 .profile-photo {
+    max-width: 100%;
     width: auto;
     height: 600px;
     border-radius: 10px;
