@@ -71,3 +71,11 @@ footer {
     color: white;
     font-size: 0.9em;
 }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 100%;
+        max-width: 325px;
+    }
+}
