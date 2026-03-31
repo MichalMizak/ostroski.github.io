@@ -72,6 +72,18 @@ footer {
     font-size: 0.9em;
 }
 
+.spotify-embed {
+    margin-top: 25px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+#spotify h2 {
+    margin-bottom: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .profile-photo {
