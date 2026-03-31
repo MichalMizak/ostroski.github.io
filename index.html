@@ -11,14 +11,23 @@
 
 <body>
     <header>
-        <div class="container">
-            <h1>Spevácka skupina Ostroški</h1>
+        <div class="container header-content">
             <img src="images/profile.jpg" alt="Spevácka skupina Ostroški Profile Photo" class="profile-photo">
-            <p>Folklórna spevácka skupina zo Sobranecka</p>
+            <h1>Spevácka skupina Ostroški</h1>
+            <p>Folklórna skupina zo Sobranecka</p>
         </div>
     </header>
 
     <main>
+        <section id="spotify" class="container">
+            <div class="spotify-embed">
+                <iframe data-testid="embed-iframe" style="border-radius:12px"
+                    src="https://open.spotify.com/embed/artist/2Z5JbWBkMfXVo262PdVGK5?utm_source=generator&theme=0"
+                    width="100%" height="352" frameborder="0" allowfullscreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+        </section>
         <section id="contact" class="container">
             <h2>Kontakt</h2>
             <ul>
@@ -32,21 +41,13 @@
                 </li>
             </ul>
         </section>
-        <section id="spotify" class="container">
-            <h2>Vypočuj si nás priamo na Spotify</h2>
-            <div class="spotify-embed">
-                <iframe data-testid="embed-iframe" style="border-radius:12px"
-                    src="https://open.spotify.com/embed/artist/2Z5JbWBkMfXVo262PdVGK5?utm_source=generator&theme=0"
-                    width="100%" height="352" frameborder="0" allowfullscreen
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-                </iframe>
-            </div>
-        </section>
+
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Spevácka skupina Ostroški. All rights reserved.</p>
+            <img src="images/logo.png" alt="Ostroški logo" class="logo">
+
         </div>
     </footer>
 </body>
