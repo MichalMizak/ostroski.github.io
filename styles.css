@@ -254,6 +254,12 @@ footer {
     opacity: 1;
 }
 
+.album-tab img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 .album-tab-title {
     margin-top: 6px;
     font-size: 0.95em;
