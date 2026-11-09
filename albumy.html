@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Albumy skupiny Ostroški - zoznam skladieb, fotografie a informácie o našich troch CD.">
+    <title>Albumy | Spevácka skupina Ostroški</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://tally.so/widgets/embed.js"></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container header-content">
+            <h1>Albumy</h1>
+            <p>Spevácka skupina Ostroški</p>
+            <a class="back-link" href="index.html">&larr; Domov</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="albums" class="container">
+            <!-- Album selector: radio inputs must stay before the selector and the panels -->
+            <input type="radio" name="album" id="album-1" class="album-radio" checked>
+            <input type="radio" name="album" id="album-2" class="album-radio">
+            <input type="radio" name="album" id="album-3" class="album-radio">
+
+            <div class="album-selector" role="group" aria-label="Výber albumu">
+                <label for="album-1" class="album-tab">
+                    <span class="cover-placeholder">💿</span>
+                    <span class="album-tab-title">Pridz do nas, šuhaju...</span>
+                </label>
+                <label for="album-2" class="album-tab">
+                    <span class="cover-placeholder">💿</span>
+                    <span class="album-tab-title">Dobre ženom</span>
+                </label>
+                <label for="album-3" class="album-tab">
+                    <span class="cover-placeholder">💿</span>
+                    <span class="album-tab-title">Novina z ňebeskoho dvora</span>
+                </label>
+            </div>
+
+            <!-- ALBUM 1 -->
+            <article class="album-panel" id="panel-1">
+                <div class="album-intro">
+                    <!-- Replace with: <img src="images/albums/album-1/cover.jpg" alt="Obal albumu Pridz do nas, šuhaju..."> -->
+                    <div class="cover-placeholder cover-large">💿</div>
+                    <div class="album-meta">
+                        <h2>Pridz do nas, šuhaju...</h2>
+                        <p class="album-facts">2020 · 12 skladieb · 49 min</p>
+                        <p>CD nosič Pridz do nas, šuhaju... pozostáva zo 40 ľudových piesní a reprezentuje 2 roky
+                            umeleckej činnosti Speváckej skupiny Ostroški. Piesne pochádzajú prevažne zo Zemplína,
+                            vypočujete si však aj rusínske, šarišské a autorské melódie. Hrá Muzika Milana Rendoša,
+                            spektrum hudobných nástrojov rozšíril o akordeón Michal Mižák a o dychové nástroje Radoslav
+                            Gajdoš.</p>
+                        <button class="order-button" data-tally-open="OQlZyM" data-tally-width="470"
+                            data-tally-overlay="1" data-tally-emoji-text="💿"
+                            data-tally-emoji-animation="tada">💿 Objednať CD</button>
+                    </div>
+                </div>
+
+                <h3>O albume</h3>
+                <p>Tento nosič odráža obdobie našich začiatkov, keď sme popri objavovaní hudobného dedičstva
+                    Sobranecka siahali aj po piesňach zo širšieho priestoru východného Slovenska. Vďaka tomu album
+                    zachytáva nielen vzácne regionálne tradície, ale aj širší kultúrny kontext, ktorý ich ovplyvňuje a formuje.
+                    Ako súčasť albumu sme sa venovali našim dvom terénnym výskumom z Fekišoviec (p. Slivková) a Vyšnej
+                    Rybnice (p. Streňová), na ktorých sme zaznamenali, okrem iného, aj nápev s viac než 88 slohami.
+                    Rozhodli sme sa preto tieto jedinečné texty spracovať do nových autorských melódií, aby mohli
+                    zaznieť v poslucháčovi bližšej podobe. Veľkou cťou je pre nás aj možnosť interpretovať úryvok básne Júliusa
+                    Knappa (2. Večurki) - rodáka z Tibavy, ktorý patril k významným osobnostiam zemplínskej literatúry
+                    a venoval sa zachytávaniu tradičnej kultúry i nárečových prejavov nášho regiónu vo forme
+                    literárnych diel.</p>
+
+
+                <h3>Zoznam skladieb</h3>
+                <ol class="tracklist">
+                    <li><span class="track-title">A jaka ja zarmucena žena</span><span class="track-time">3:47</span></li>
+                    <li><span class="track-title">Večurki</span><span class="track-time">1:48</span></li>
+                    <li><span class="track-title">A dze ši bula</span><span class="track-time">3:41</span></li>
+                    <li><span class="track-title">Pidskoču si</span><span class="track-time">4:17</span></li>
+                    <li><span class="track-title">Ňichto ňezna co me boľi</span><span class="track-time">4:39</span></li>
+                    <li><span class="track-title">Ej braňat mi, zabraňajut</span><span class="track-time">5:15</span></li>
+                    <li><span class="track-title">Vo vodze rak</span><span class="track-time">4:52</span></li>
+                    <li><span class="track-title">A tam hore za jaročkom</span><span class="track-time">3:31</span></li>
+                    <li><span class="track-title">Mužu, mužu, ja ce predam</span><span class="track-time">4:09</span></li>
+                    <li><span class="track-title">Predalam' frajira</span><span class="track-time">5:11</span></li>
+                    <li><span class="track-title">Zaspivaj kohutku</span><span class="track-time">5:00</span></li>
+                    <li><span class="track-title">Pridz do nas, šuhaju...</span><span class="track-time">2:23</span></li>
+                </ol>
+
+                <h3>Fotografie</h3>
+                <div class="photo-grid">
+                    <!-- Replace each placeholder with: <img src="images/albums/album-1/photo-1.jpg" alt="..." loading="lazy"> -->
+                    <div class="photo-placeholder">Fotografia 1</div>
+                    <div class="photo-placeholder">Fotografia 2</div>
+                    <div class="photo-placeholder">Fotografia 3</div>
+                    <div class="photo-placeholder">Fotografia 4</div>
+                </div>
+
+                <h3>Doplňujúce informácie</h3>
+                <dl class="album-info">
+                    <dt>Spev</dt>
+                    <dd>
+                        <strong>Ostroški</strong><br>
+                        Tímea Burčíková (3a, 7, 9b)<br>
+                        Alžbeta Ďačková (4a, 11)<br>
+                        Jana Janusiková (4b, 5a)<br>
+                        Kristína Pašková (4b, 4c)<br>
+                        Miroslava Rošková (6a)<br>
+                        Michal Mižák (7, 10b)
+                    </dd>
+                    <dt>Hudba</dt>
+                    <dd>
+                        Husle: Mgr. Ľuboslav Hudák<br>
+                        Cimbal: Mgr. Matej Lacko<br>
+                        Viola: Mgr. Marián Gereg<br>
+                        Kontrabas, ústna harmonika (5): Milan Rendoš<br>
+                        Akordeón: Michal Mižák<br>
+                        Dychové nástroje, a.h.: Radoslav Gajdoš
+                    </dd>
+                    <dt>Zvuková réžia</dt>
+                    <dd>Ing. Gabriel Nikházy</dd>
+                    <dt>Hudobná réžia</dt>
+                    <dd>Mgr. Milan Rendoš</dd>
+                    <dt>Dramaturgia a hudobné spracovanie</dt>
+                    <dd>Michal Mižák</dd>
+                    <dt>Autorské melódie</dt>
+                    <dd>Michal Mižák: 2, 10a, 10c, 10d, 12b, 12c</dd>
+                    <dt>Autorské texty</dt>
+                    <dd>Mgr. Július Knapp: 2</dd>
+                    <dt>Grafické spracovanie</dt>
+                    <dd>Modrý animág</dd>
+                    <dt>Vydavateľstvo</dt>
+                    <dd>HMcomp</dd>
+                </dl>
+            </article>
+
+            <!-- ALBUM 2 -->
+            <article class="album-panel" id="panel-2">
+                <div class="album-intro">
+                    <!-- Replace with: <img src="images/albums/album-2/cover.jpg" alt="Obal albumu Dobre ženom"> -->
+                    <div class="cover-placeholder cover-large">💿</div>
+                    <div class="album-meta">
+                        <h2>Dobre ženom</h2>
+                        <p class="album-facts">2025 · 17 skladieb · 57 min</p>
+                        <p>Napriek tomu, že aktuálne je súčasťou Zemplína, v minulosti bola Užská župa samosprávne, etnicky
+                            a kultúrne odlíšenou časťou. Pevne veríme, že na tomto CD nosiči Vám odhalíme krásy
+                            zabudnutého, ale aj živého folklóru tejto oblasti. Hrá Ľudová hudba Zemplín, spievajú
+                            Ostroški a hostia.</p>
+                        <button class="order-button" data-tally-open="OQlZyM" data-tally-width="470"
+                            data-tally-overlay="1" data-tally-emoji-text="💿"
+                            data-tally-emoji-animation="tada">💿 Objednať CD</button>
+                    </div>
+                </div>
+
+                <h3>O albume</h3>
+                <p>Na albume Dobre ženom ožívajú vzácne piesne, ktoré pretrvali v pamäti našich predkov a teraz
+                    dostávajú nový život. Každá skladba nesie príbeh - o radosti, smútku, láske alebo túžbe po domove.
+                    Preneste sa do prelomu 19. a 20. storočia, do času balád o tragickej smrti cisárovnej Alžbety
+                    Bavorskej (Sissi), vcíťte sa do pocitov osamelej ženy, ktorej muž ťažko zarába peniaze za
+                    oceánom, ale aj do bežných dní zemplínskeho človeka, so všetkými radosťami a strasťami, ktoré k
+                    nemu patria. Materiál prednášame v tematicky ucelených blokoch, ktoré umožňujú vnímať
+                    rozmanitosť zemplínskych nárečí a melodických rodín - variantov nápevov. Veríme, že tieto piesne
+                    oslovia nielen milovníkov folklóru, ale aj tých, ktorí objavujú krásu tradičnej hudby po prvýkrát.
+                </p>
+
+                <h3>Zoznam skladieb</h3>
+                <ol class="tracklist">
+                    <li><span class="track-title">Už Janička vedu</span><span class="track-time">2:17</span></li>
+                    <li><span class="track-title">Kotra dzivka postatočne zotrima śe</span><span class="track-time">3:34</span></li>
+                    <li><span class="track-title">Čaj, čaj</span><span class="track-time">2:22</span></li>
+                    <li><span class="track-title">Na brižku stala</span><span class="track-time">2:55</span></li>
+                    <li><span class="track-title">Vyšnij konec</span><span class="track-time">1:50</span></li>
+                    <li><span class="track-title">Tak pisaľi ženy</span><span class="track-time">4:12</span></li>
+                    <li><span class="track-title">Javore, javore</span><span class="track-time">3:37</span></li>
+                    <li><span class="track-title">Sama ja pasuľku sadzila</span><span class="track-time">4:41</span></li>
+                    <li><span class="track-title">Ľecela pavička</span><span class="track-time">2:00</span></li>
+                    <li><span class="track-title">Vinočku muj vinku</span><span class="track-time">3:14</span></li>
+                    <li><span class="track-title">Ej, dajce nam paľenki</span><span class="track-time">4:35</span></li>
+                    <li><span class="track-title">U zelenym ľisi</span><span class="track-time">3:38</span></li>
+                    <li><span class="track-title">Vibila mi prepiločka proso</span><span class="track-time">2:53</span></li>
+                    <li><span class="track-title">Dobre ženom</span><span class="track-time">3:37</span></li>
+                    <li><span class="track-title">Mila premila</span><span class="track-time">4:12</span></li>
+                    <li><span class="track-title">Co śe stalo v 1899</span><span class="track-time">3:50</span></li>
+                    <li><span class="track-title">Eja hoja, zaśpivam sebe raz</span><span class="track-time">3:41</span></li>
+                </ol>
+
+                <h3>Fotografie</h3>
+                <div class="photo-grid">
+                    <div class="photo-placeholder">Fotografia 1</div>
+                    <div class="photo-placeholder">Fotografia 2</div>
+                    <div class="photo-placeholder">Fotografia 3</div>
+                    <div class="photo-placeholder">Fotografia 4</div>
+                </div>
+
+                <h3>Doplňujúce informácie</h3>
+                <dl class="album-info">
+                    <dt>Spev</dt>
+                    <dd>
+                        <strong>Ostroški</strong><br>
+                        Jana Maľuková (11a, 13)<br>
+                        Tímea Mižáková (7, 10a)<br>
+                        Miroslava Rošková (5, 14b)<br>
+                        Michal Mižák (4a, 8b, 14cg, 15a)<br>
+                        <strong>Hosťujúci speváci</strong><br>
+                        Kristián Sekerák (4f, 12, 15c)<br>
+                        Martin Rusnák (15a)<br>
+                        Biňatinski chlopci (6, 12, 15): Vladimír Mikulanič, Vladimír Mikulanič, Marián Ivaniš<br>
+                        Bratia Onderovci (12)<br>
+                        Inovské trio (12): Alexandra Nováková, Kristína Janusiková (6b), Pavol Novák
+                    </dd>
+                    <dt>Hudba</dt>
+                    <dd>
+                        <strong>Ľudová hudba Zemplín</strong><br>
+                        Primáš: Viktor Gliganič, Štefan Galík (3, 13, 17)<br>
+                        Viola: Pavol Bánoci, Michal Micák<br>
+                        Cimbal: Jozef Koreň<br>
+                        Kontrabas: Boris Pasterák<br>
+                        Akordeón, hudobné aranžmá a dramaturgia: Michal Mižák<br>
+                        Klarinet, sopr. a alt. saxofón, tárogató: Radoslav Gajdoš<br>
+                        Zobcová flauta a píšťalka: Dávid Medviď<br>
+                        Priečna flauta: Alžbeta Čurmová (2, 16), Alica Hrdinská (12)<br>
+                        Tanečné perkusie: Sarah Mária Tothová (11), Marián Mižák (1, 15)<br>
+                        Hosťujúci akordeonista: Matúš Gális
+                    </dd>
+                    <dt>Doplnková produkcia</dt>
+                    <dd>Milan Rendoš</dd>
+                    <dt>Zvuková réžia, mastering a produkcia</dt>
+                    <dd>Gabriel Nikházy</dd>
+                    <dt>Vydavateľstvo</dt>
+                    <dd>HMcomp</dd>
+                </dl>
+            </article>
+
+            <!-- ALBUM 3 -->
+            <article class="album-panel" id="panel-3">
+                <div class="album-intro">
+                    <!-- Replace with: <img src="images/albums/album-3/cover.jpg" alt="Obal albumu Novina z ňebeskoho dvora"> -->
+                    <div class="cover-placeholder cover-large">💿</div>
+                    <div class="album-meta">
+                        <h2>Novina z ňebeskoho dvora</h2>
+                        <p class="album-facts">2026 · 19 skladieb · 52 min</p>
+                        <p>Zemplín je región, kde po stáročia spolunažívali ľudia rôznych kultúr a vierovyznaní, ktorí
+                            spoločne formovali jedinečný duchovný odkaz. Každá komunita priniesla vlastný pohľad na
+                            vianočnú zvesť, jej hudobnú podobu aj spôsob interpretácie. Na tomto nosiči je zachytený
+                            fragment tejto bohatej hudobnej tradície v našom podaní. Hrá Ľudová hudba Zemplín, spievajú
+                            Ostroški a Inovské trio. Prajeme Vám príjemné počúvanie.</p>
+                        <button class="order-button" data-tally-open="OQlZyM" data-tally-width="470"
+                            data-tally-overlay="1" data-tally-emoji-text="💿"
+                            data-tally-emoji-animation="tada">💿 Objednať CD</button>
+                    </div>
+                </div>
+
+                <h3>O albume</h3>
+                <p>Ostroški a Inovské trio už dlhé roky spoločne pripravujú vianočný program s názvom Novina z
+                    ňebeskoho dvora, prostredníctvom ktorého predstavujú bohatstvo kolied zo Sobranského okresu a
+                    priľahlých regiónov. Výber najkrajších piesní z tohto programu sme spracovali aj do podoby
+                    hudobného nosiča.</p>
+                </p>Historický vývoj Zemplína, kde sa po stáročia stretávali
+                    rôzne národnosti a vierovyznania, sa odráža aj v pestrosti tohto nosiča. Poslucháči na ňom nájdu
+                    koledy z prostredia pravoslávnej, evanjelickej, gréckokatolíckej i rímskokatolíckej tradície.</p>
+                <p>Inovské trio na ňom prináša koledy z obcí Inovce, Ruská Bystrá, Ruský Hrabovec, Podhoroď a
+                    Beňatina, ako aj piesne rozšírené naprieč rusínskou komunitou v mnohých miestnych podobách.
+                    Ostroški prezentujú koledy z obcí Ostrov, Pozdišovce, Sobrance, ale aj koledy z Jednotného katolíckeho spevníka. Mimoriadne cennou súčasťou nahrávky je spracovanie ľudovej betlehemskej obchôdzky z obce Hlivištia (4. Gubovstvo s Chľiviš'),
+                    ktorej tradícia siaha až do 16. storočia. 
+                <p>Nosič zároveň predstavuje aj tradičné vianočné vinše, ktoré sú neoddeliteľnou súčasťou kultúrneho
+                    dedičstva nášho regiónu a dodnes sprevádzajú sviatočné stretnutia v mnohých rodinách.</p>
+
+                <h3>Zoznam skladieb</h3>
+                <ol class="tracklist">
+                    <li><span class="track-title">Roždestvo</span><span class="track-time">0:58</span></li>
+                    <li><span class="track-title">Dobryj večur</span><span class="track-time">2:37</span></li>
+                    <li><span class="track-title">Nič nad Viflejemom</span><span class="track-time">2:37</span></li>
+                    <li><span class="track-title">Gubovstvo s Chľiviš'</span><span class="track-time">4:52</span></li>
+                    <li><span class="track-title">Oj u Viflejemi</span><span class="track-time">3:02</span></li>
+                    <li><span class="track-title">Vstavaj, vstavaj, Hospodarju</span><span class="track-time">2:36</span></li>
+                    <li><span class="track-title">Veśela novina</span><span class="track-time">3:47</span></li>
+                    <li><span class="track-title">Divnaja novina</span><span class="track-time">3:52</span></li>
+                    <li><span class="track-title">Viflejemi dnes Maria prečista</span><span class="track-time">3:06</span></li>
+                    <li><span class="track-title">Vo strani Judejskoj</span><span class="track-time">2:52</span></li>
+                    <li><span class="track-title">Prišiel ten čas veselý</span><span class="track-time">1:26</span></li>
+                    <li><span class="track-title">Hľa, zástup zboru anjelského</span><span class="track-time">3:09</span></li>
+                    <li><span class="track-title">V svjatych horach</span><span class="track-time">3:04</span></li>
+                    <li><span class="track-title">Gloria, čest, chvala</span><span class="track-time">2:41</span></li>
+                    <li><span class="track-title">Koli Mati Boža</span><span class="track-time">2:28</span></li>
+                    <li><span class="track-title">Po vsjomu sviti</span><span class="track-time">1:46</span></li>
+                    <li><span class="track-title">Kyrie eleison</span><span class="track-time">2:31</span></li>
+                    <li><span class="track-title">Narodzil śe nam Spasiteľ</span><span class="track-time">1:39</span></li>
+                    <li><span class="track-title">V Betľeme dneš jasne śvetlo śvicilo</span><span class="track-time">3:07</span></li>
+                </ol>
+
+                <h3>Fotografie</h3>
+                <div class="photo-grid">
+                    <div class="photo-placeholder">Fotografia 1</div>
+                    <div class="photo-placeholder">Fotografia 2</div>
+                    <div class="photo-placeholder">Fotografia 3</div>
+                    <div class="photo-placeholder">Fotografia 4</div>
+                </div>
+
+                <h3>Doplňujúce informácie</h3>
+                <dl class="album-info">
+                    <dt>Spev</dt>
+                    <dd>
+                        <strong>Ostroški:</strong> Jana Maľuková, Tímea Mižáková, Miroslava Rošková, Michal Mižák<br>
+                        <strong>Inovské trio:</strong> Pavol Novák, Alexandra Nováková, Kristína Janusiková<br>
+                        Matúš Kostičák (1, 10) a.h.
+                    </dd>
+                    <dt>Hudba</dt>
+                    <dd>
+                        <strong>Ľudová hudba Zemplín</strong><br>
+                        Husle: Viktor Gliganič<br>
+                        Viola: Michal Micák, Miloš Dankanin<br>
+                        Cimbal: Jozef Koreň<br>
+                        Kontrabas: Jakub Buraš<br>
+                        Akordeón, spev, hudobné aranžmá a dramaturgia: Michal Mižák<br>
+                        Dychové nástroje: Radoslav Gajdoš
+                    </dd>
+                    <dt>Zvuková réžia, mastering a produkcia</dt>
+                    <dd>Gabriel Nikházy</dd>
+                    <dt>Vydavateľstvo</dt>
+                    <dd>HMcomp</dd>
+                </dl>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="images/logo.png" alt="Ostroški logo" class="logo">
+        </div>
+    </footer>
+</body>
+
+</html>
