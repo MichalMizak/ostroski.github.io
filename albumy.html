@@ -151,6 +151,7 @@
                         <button class="order-button" data-tally-open="OQlZyM" data-tally-width="470"
                             data-tally-overlay="1" data-tally-emoji-text="💿"
                             data-tally-emoji-animation="tada">💿 Objednať CD</button>
+                        <a class="button-link" href="spevnik.html?album=dobre-zenom">📖 Otvoriť spevník</a>
                     </div>
                 </div>
 
@@ -188,10 +189,14 @@
 
                 <h3>Fotografie</h3>
                 <div class="photo-grid">
-                    <div class="photo-placeholder">Fotografia 1</div>
-                    <div class="photo-placeholder">Fotografia 2</div>
-                    <div class="photo-placeholder">Fotografia 3</div>
-                    <div class="photo-placeholder">Fotografia 4</div>
+                    <img src="images/dobre_zenom_foto/thumb-190.jpg" data-full="images/dobre_zenom_foto/full-190.jpg" alt="Dobre ženom - fotografia 1" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-70.jpg" data-full="images/dobre_zenom_foto/full-70.jpg" alt="Dobre ženom - fotografia 2" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-90.jpg" data-full="images/dobre_zenom_foto/full-90.jpg" alt="Dobre ženom - fotografia 3" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-110.jpg" data-full="images/dobre_zenom_foto/full-110.jpg" alt="Dobre ženom - fotografia 4" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-2925.jpg" data-full="images/dobre_zenom_foto/full-2925.jpg" alt="Dobre ženom - fotografia 5" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-2986.jpg" data-full="images/dobre_zenom_foto/full-2986.jpg" alt="Dobre ženom - fotografia 6" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-2988.jpg" data-full="images/dobre_zenom_foto/full-2988.jpg" alt="Dobre ženom - fotografia 7" loading="lazy">
+                    <img src="images/dobre_zenom_foto/thumb-3105.jpg" data-full="images/dobre_zenom_foto/full-3105.jpg" alt="Dobre ženom - fotografia 8" loading="lazy">
                 </div>
 
                 <h3>Doplňujúce informácie</h3>
@@ -291,10 +296,11 @@
 
                 <h3>Fotografie</h3>
                 <div class="photo-grid">
-                    <div class="photo-placeholder">Fotografia 1</div>
-                    <div class="photo-placeholder">Fotografia 2</div>
-                    <div class="photo-placeholder">Fotografia 3</div>
-                    <div class="photo-placeholder">Fotografia 4</div>
+                    <img src="images/novina_z_nebeskoho_dvora_foto/foto-20.jpg" data-full="images/novina_z_nebeskoho_dvora_foto/20.jpg" alt="Novina z ňebeskoho dvora - fotografia 1" loading="lazy">
+                    <img src="images/novina_z_nebeskoho_dvora_foto/foto-40.jpg" data-full="images/novina_z_nebeskoho_dvora_foto/40.jpg" alt="Novina z ňebeskoho dvora - fotografia 2" loading="lazy">
+                    <img src="images/novina_z_nebeskoho_dvora_foto/foto-60.jpg" data-full="images/novina_z_nebeskoho_dvora_foto/60.jpg" alt="Novina z ňebeskoho dvora - fotografia 3" loading="lazy">
+                    <img src="images/novina_z_nebeskoho_dvora_foto/foto-70.jpg" data-full="images/novina_z_nebeskoho_dvora_foto/70.jpg" alt="Novina z ňebeskoho dvora - fotografia 4" loading="lazy">
+                    <img src="images/novina_z_nebeskoho_dvora_foto/foto-80.jpg" data-full="images/novina_z_nebeskoho_dvora_foto/80.jpg" alt="Novina z ňebeskoho dvora - fotografia 5" loading="lazy">
                 </div>
 
                 <h3>Doplňujúce informácie</h3>
@@ -303,7 +309,7 @@
                     <dd>
                         <strong>Ostroški:</strong> Jana Maľuková, Tímea Mižáková, Miroslava Rošková, Michal Mižák<br>
                         <strong>Inovské trio:</strong> Pavol Novák, Alexandra Nováková, Kristína Janusiková<br>
-                        Matúš Kostičák (1, 10) a.h.
+                        Matúš Kostičák (1, 2, 10) a.h.
                     </dd>
                     <dt>Hudba</dt>
                     <dd>
@@ -329,6 +335,71 @@
             <img src="images/logo.png" alt="Ostroški logo" class="logo">
         </div>
     </footer>
+    <dialog id="lightbox" class="lightbox" aria-label="Zväčšená fotografia">
+        <button type="button" class="lightbox-close" aria-label="Zavrieť">&times;</button>
+        <button type="button" class="lightbox-nav lightbox-prev" aria-label="Predchádzajúca fotografia">&lsaquo;</button>
+        <img id="lightbox-img" src="" alt="">
+        <button type="button" class="lightbox-nav lightbox-next" aria-label="Nasledujúca fotografia">&rsaquo;</button>
+    </dialog>
+    <script>
+        // Photo lightbox: clicking a photo in any .photo-grid opens it enlarged
+        (function () {
+            var box = document.getElementById('lightbox');
+            var boxImg = document.getElementById('lightbox-img');
+            var group = [];
+            var index = 0;
+
+            function show(i) {
+                index = (i + group.length) % group.length;
+                boxImg.src = group[index].dataset.full || group[index].src;
+                boxImg.alt = group[index].alt;
+            }
+
+            document.querySelectorAll('.photo-grid img').forEach(function (img) {
+                var button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'photo-button';
+                button.setAttribute('aria-label', 'Zväčšiť: ' + img.alt);
+                img.parentNode.insertBefore(button, img);
+                button.appendChild(img);
+                button.addEventListener('click', function () {
+                    group = Array.prototype.slice.call(img.closest('.photo-grid').querySelectorAll('img'));
+                    show(group.indexOf(img));
+                    box.querySelectorAll('.lightbox-nav').forEach(function (n) { n.hidden = group.length < 2; });
+                    box.showModal();
+                });
+            });
+
+            box.querySelector('.lightbox-close').addEventListener('click', function () { box.close(); });
+            box.querySelector('.lightbox-prev').addEventListener('click', function () { show(index - 1); });
+            box.querySelector('.lightbox-next').addEventListener('click', function () { show(index + 1); });
+            // Click on the dark backdrop (the dialog element itself) closes the lightbox
+            box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+            box.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') show(index - 1);
+                if (e.key === 'ArrowRight') show(index + 1);
+            });
+            box.addEventListener('close', function () { boxImg.src = ''; });
+        })();
+
+        // Keep the URL hash in sync with the selected album and let deep links
+        // such as albumy.html#album-3 select the matching album tab
+        var radios = document.querySelectorAll('.album-radio');
+
+        function selectFromHash() {
+            var radio = /^#album-\d+$/.test(location.hash) ? document.querySelector('.album-radio' + location.hash) : null;
+            if (radio) radio.checked = true;
+        }
+
+        radios.forEach(function (r) {
+            r.addEventListener('change', function () {
+                if (r.checked) history.replaceState(null, '', '#' + r.id);
+            });
+        });
+
+        window.addEventListener('hashchange', selectFromHash);
+        selectFromHash();
+    </script>
 </body>
 
 </html>
