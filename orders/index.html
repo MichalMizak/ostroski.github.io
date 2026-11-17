@@ -16,20 +16,68 @@
             color: var(--accent-red);
         }
 
-        .order-iban {
-            display: inline-block;
-            margin: 10px 0 20px;
-            padding: 12px 20px;
-            background: var(--accent-dark);
-            color: #fff;
+        /* Payment instructions (up-front payment): both boxes share the same width, padding and type size */
+        .order-payment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .order-payment[hidden] {
+            display: none;
+        }
+
+        .order-box {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 460px;
+            margin: 0;
+            padding: 14px 20px;
             border-radius: 10px;
-            font-size: 1.25em;
-            letter-spacing: 0.04em;
+            text-align: center;
             word-break: break-word;
         }
 
+        .order-box-label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            opacity: 0.75;
+        }
+
+        .order-box-value {
+            display: block;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .order-iban {
+            background: var(--accent-dark);
+            color: #fff;
+        }
+
+        .order-iban .order-box-value {
+            letter-spacing: 0.04em;
+            user-select: all;
+        }
+
+        .order-name-note {
+            background: var(--accent-yellow);
+            color: var(--accent-dark);
+        }
+
         .order-note {
-            margin-top: 20px;
+            margin: 0 0 20px;
+        }
+
+        .order-thanks {
+            margin-top: 30px;
+            font-size: 1.2em;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -37,8 +85,8 @@
 <body>
     <header class="page-header">
         <div class="container header-content">
-            <h1>Ďakujeme</h1>
-            <p>Spevácka skupina Ostroški</p>
+            <h1>Spevácka skupina Ostroški</h1>
+            <a class="back-link" href="../index.html">&larr; Domov</a>
         </div>
     </header>
 
@@ -48,15 +96,22 @@
             <p>Celková suma:</p>
             <p class="order-total" id="order-total"></p>
             <p id="order-message"></p>
-            <p id="order-iban-wrap" hidden>
-                <span>IBAN:</span><br>
-                <span class="order-iban" id="order-iban">SK69 7500 0000 0040 1963 4669</span>
-            </p>
+            <div class="order-payment" id="order-payment" hidden>
+                <p class="order-box order-iban">
+                    <span class="order-box-label">IBAN</span>
+                    <span class="order-box-value">SK69 7500 0000 0040 1963 4669</span>
+                </p>
+                <p class="order-box order-name-note">
+                    <span class="order-box-label">Dôležité</span>
+                    <span class="order-box-value">Do poznámky k platbe uveďte Vaše meno.</span>
+                </p>
+            </div>
             <p class="order-note" id="order-note"></p>
             <noscript>
                 <p>Vaša objednávka bola prijatá. Ak sa vám nezobrazuje celková suma, zapnite si prosím JavaScript
                     alebo nás kontaktujte na ssostroski@gmail.com.</p>
             </noscript>
+            <p class="order-thanks">Ďakujeme Vám za objednávku a podporu našej tvorby.</p>
         </section>
     </main>
 
@@ -111,11 +166,10 @@
 
             if (payment === 'vopred') {
                 messageEl.textContent = 'Pošlite prosím sumu ' + amount + ' na účet:';
-                document.getElementById('order-iban-wrap').hidden = false;
-                noteEl.textContent = 'Do poznámky k platbe uveďte vaše meno. Zásielku odošleme po prijatí platby.';
+                document.getElementById('order-payment').hidden = false;
+                noteEl.textContent = 'Zásielku odošleme po prijatí platby.';
             } else if (payment === 'dobierka') {
                 messageEl.textContent = 'Sumu ' + amount + ' uhradíte pri prevzatí zásielky (dobierka).';
-                noteEl.textContent = 'Budeme vás kontaktovať s podrobnosťami k doručeniu.';
             } else {
                 messageEl.textContent = 'Budeme vás kontaktovať s podrobnosťami k platbe.';
             }
