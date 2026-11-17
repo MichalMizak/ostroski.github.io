@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <title>Objednávka prijatá | Ostroški</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .order-total {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin: 10px 0 20px;
+            color: var(--accent-red);
+        }
+
+        .order-iban {
+            display: inline-block;
+            margin: 10px 0 20px;
+            padding: 12px 20px;
+            background: var(--accent-dark);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 1.25em;
+            letter-spacing: 0.04em;
+            word-break: break-word;
+        }
+
+        .order-note {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container header-content">
+            <h1>Ďakujeme</h1>
+            <p>Spevácka skupina Ostroški</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="order" class="container" aria-live="polite">
+            <h2 id="order-title">Vaša objednávka bola prijatá.</h2>
+            <p>Celková suma:</p>
+            <p class="order-total" id="order-total"></p>
+            <p id="order-message"></p>
+            <p id="order-iban-wrap" hidden>
+                <span>IBAN:</span><br>
+                <span class="order-iban" id="order-iban">SK69 7500 0000 0040 1963 4669</span>
+            </p>
+            <p class="order-note" id="order-note"></p>
+            <noscript>
+                <p>Vaša objednávka bola prijatá. Ak sa vám nezobrazuje celková suma, zapnite si prosím JavaScript
+                    alebo nás kontaktujte na ssostroski@gmail.com.</p>
+            </noscript>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <img src="../images/logo.png" alt="Ostroški logo" class="logo">
+        </div>
+    </footer>
+
+    <script>
+        // Landing page for Tally redirect:
+        //   /orders/?total=@total&payment=@payment
+        // total   - price, e.g. 12, 12.5 or 12,50
+        // payment - answer of the payment-method question; anything containing "dobierk" means cash on delivery,
+        //           anything containing "vopred", "prevod" or "ucet" means up-front bank transfer.
+        // If payment is missing or unknown, a neutral confirmation without payment instructions is shown.
+        (function () {
+            var params = new URLSearchParams(location.search);
+
+            function parseTotal(raw) {
+                if (raw === null) return null;
+                var s = raw.replace(/[\s\u00a0]/g, '').replace(/€|eur/gi, '').replace(',', '.');
+                if (!/^\d{1,6}(\.\d{1,2})?$/.test(s)) return null;
+                var n = Number(s);
+                return n > 0 ? n : null;
+            }
+
+            function parsePayment(raw) {
+                if (raw === null) return null;
+                var s = raw.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+                if (s.indexOf('dobierk') !== -1) return 'dobierka';
+                if (/vopred|prevod|ucet/.test(s)) return 'vopred';
+                return null;
+            }
+
+            var total = parseTotal(params.get('total'));
+            var payment = parsePayment(params.get('payment'));
+
+            var totalEl = document.getElementById('order-total');
+            var messageEl = document.getElementById('order-message');
+            var noteEl = document.getElementById('order-note');
+
+            if (total === null) {
+                totalEl.parentNode.removeChild(totalEl.previousElementSibling);
+                totalEl.parentNode.removeChild(totalEl);
+                messageEl.textContent = 'Budeme vás kontaktovať s podrobnosťami k platbe.';
+                return;
+            }
+
+            var amount = new Intl.NumberFormat('sk-SK', { style: 'currency', currency: 'EUR' }).format(total);
+            totalEl.textContent = amount;
+
+            if (payment === 'vopred') {
+                messageEl.textContent = 'Pošlite prosím sumu ' + amount + ' na účet:';
+                document.getElementById('order-iban-wrap').hidden = false;
+                noteEl.textContent = 'Do poznámky k platbe uveďte vaše meno. Zásielku odošleme po prijatí platby.';
+            } else if (payment === 'dobierka') {
+                messageEl.textContent = 'Sumu ' + amount + ' uhradíte pri prevzatí zásielky (dobierka).';
+                noteEl.textContent = 'Budeme vás kontaktovať s podrobnosťami k doručeniu.';
+            } else {
+                messageEl.textContent = 'Budeme vás kontaktovať s podrobnosťami k platbe.';
+            }
+        })();
+    </script>
+</body>
+
+</html>
